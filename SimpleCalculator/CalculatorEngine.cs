@@ -6,9 +6,16 @@ namespace SimpleCalculator
     {
         public double Calculate (string argOperation, double argFirstNumber, double argSecondNumber)
         {
+            argOperation.ToLower();
+            while (argOperation != "add" && argOperation != "+" && argOperation != "subtract" && argOperation != "-" && argOperation != "multiply" && argOperation != "*" && argOperation != "divide" && argOperation != "/")
+            {
+                Console.WriteLine("This opertaion is not recongnized. Try again.");
+                Console.WriteLine("Try writing out the operation, add, or using the appropriate symbol, +,:");
+                argOperation = Console.ReadLine();
+            }
             double result;
 
-            switch(argOperation.ToLower())
+            switch(argOperation)
             {
                 case "add":
                 case "+":
