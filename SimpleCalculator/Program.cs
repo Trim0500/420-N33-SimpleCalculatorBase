@@ -26,7 +26,15 @@ namespace SimpleCalculator
 
                 double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
 
-                Console.WriteLine(result);
+                String resultLine = "";
+                resultLine += String.Format("First number entered: {0:F2}\n", firstNumber);
+                resultLine += String.Format("Second number entered: {0:F2}\n", secondNumber);
+                resultLine += String.Format("Operation used: {0}\n", operation);
+                resultLine += String.Format("The result is: {0:F2}", result);
+
+                StringBuilder SB = new StringBuilder(resultLine);
+
+                Console.WriteLine(SB.ToString());
 
             } catch (Exception ex)
             {
