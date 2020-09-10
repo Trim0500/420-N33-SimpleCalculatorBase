@@ -11,7 +11,12 @@ namespace SimpleCalculator
         public double ConvertInputToNumeric(string argTextInput)
         {
             double convertedNumber;
-            if (!double.TryParse(argTextInput, out convertedNumber)) throw new ArgumentException("Expected a numeric value.");
+            while (!double.TryParse(argTextInput, out convertedNumber))
+            {
+                Console.WriteLine("Please enter a numeric value (e.g. 1, 2 or 3)");
+                argTextInput = Console.ReadLine();
+                double.TryParse(argTextInput, out convertedNumber);
+            }
 
             return convertedNumber;
         }

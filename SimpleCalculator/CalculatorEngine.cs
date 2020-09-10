@@ -6,30 +6,44 @@ namespace SimpleCalculator
     {
         public double Calculate (string argOperation, double argFirstNumber, double argSecondNumber)
         {
-            double result;
+            double result = 0;
+            bool recognized = false;
 
-            switch(argOperation.ToLower())
+            while (recognized != true)
             {
-                case "add":
-                case "+":
-                    result = argFirstNumber + argSecondNumber;
-                    break;
-                case "subtract":
-                case "-":
-                    result = argFirstNumber - argSecondNumber;
-                    break;
-                case "multiply":
-                case "*":
-                    result = argFirstNumber * argSecondNumber;
-                    break;
-                case "divide":
-                case "/":
-                    result = argFirstNumber / argSecondNumber;
-                    break;
-                default:
-                    throw new InvalidOperationException("Specified operation is not recognized.");
+                switch(argOperation.ToLower())
+                {
+                    case "add":
+                    case "+":
+                        result = argFirstNumber + argSecondNumber;
+                        recognized = true;
+                        break;
+                    case "subtract":
+                    case "-":
+                        result = argFirstNumber - argSecondNumber;
+                        recognized = true;
+                        break;
+                    case "multiply":
+                    case "*":
+                        result = argFirstNumber * argSecondNumber;
+                        recognized = true;
+                        break;
+                    case "divide":
+                    case "/":
+                        result = argFirstNumber / argSecondNumber;
+                        recognized = true;
+                        break;
+                    default:
+                        Console.WriteLine("Please enter a valid operation (e.g. add +, subtract -, multiply * or divide /)");
+                        argOperation = Console.ReadLine();
+                        break;
+                       
+                }
+
+
             }
             return result;
+
         }
     }
 }
