@@ -1,0 +1,1 @@
+﻿Added the ability to calculate exponent by writting power or ^ 
