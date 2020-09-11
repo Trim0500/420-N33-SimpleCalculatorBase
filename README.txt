@@ -1,4 +1,4 @@
-﻿Modifyed by: Tristan Lafleur & Randy Chhun
+Modifyed by: Tristan Lafleur & Randy Chhun
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
