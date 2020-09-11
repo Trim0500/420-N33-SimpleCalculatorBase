@@ -26,7 +26,15 @@ namespace SimpleCalculator
 
                 double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
 
-                Console.WriteLine(result);
+                StringBuilder sb = new StringBuilder();
+
+                sb.Append("The value ");
+                sb.Append(firstNumber);
+                sb.Append(" " + operation + " the value ");
+                sb.Append(secondNumber);
+                sb.Append(" is equal to ");
+                sb.Append(result);
+                Console.WriteLine(sb.ToString());
 
             } catch (Exception ex)
             {
