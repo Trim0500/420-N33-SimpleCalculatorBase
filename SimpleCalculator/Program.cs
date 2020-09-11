@@ -28,12 +28,8 @@ namespace SimpleCalculator
 
                 StringBuilder sb = new StringBuilder();
 
-                sb.Append("The value ");
-                sb.Append(firstNumber);
-                sb.Append(" " + operation + " the value ");
-                sb.Append(secondNumber);
-                sb.Append(" is equal to ");
-                sb.Append(result);
+                sb.AppendFormat("The value {0} {1} the value {2} is equal to {3:f2}", firstNumber, operation, secondNumber, result);
+
                 Console.WriteLine(sb.ToString());
 
             } catch (Exception ex)
