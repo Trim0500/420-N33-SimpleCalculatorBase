@@ -20,13 +20,44 @@ namespace SimpleCalculator
                 //Class to perform actual calculations
                 CalculatorEngine calculatorEngine = new CalculatorEngine();
 
-                double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-                double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-                string operation = Console.ReadLine();
+                bool confirmation = false;
 
-                double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
+                while (confirmation != true)
+                {
 
-                Console.WriteLine(result);
+                    double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
+                    double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
+                    string operation = Console.ReadLine();
+
+                    Console.WriteLine("Are you sure that you've entered the right values?");
+                    Console.WriteLine("If yes, then write Yes/yes, if no, then write No/no to re-enter them.");
+                    string anwser = "";
+                
+                    while(anwser != "yes" && anwser != "Yes" && anwser != "no" && anwser != "No") { 
+                        
+                        anwser = Console.ReadLine();
+
+
+                        if (anwser == "yes" || anwser == "Yes")
+                        {
+                            double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
+                            Console.WriteLine(result);
+                            confirmation = true;
+                        }
+                        else if (anwser == "no" || anwser == "No")
+                        {
+                            confirmation = false;
+                            Console.WriteLine("You can now re-enter the values.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please answer yes or no.");
+                        }
+
+                    }
+ 
+                }
+
 
             } catch (Exception ex)
             {
